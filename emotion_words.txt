@@ -7,15 +7,20 @@ list to start with.
 I attempted to include all the basic variations of each root word. For example,
 adore, adored, and adoring are all variations on the same root word. When
 counting the number of dreams that contain these words, however, I grouped these
-variations together. If one dream contains the word "adore" and another dream 
+variations together. If one dream contains the word "adore" and another dream
 contains the word "adored," the results would show that two dreams contained the
-word "adored."
+word "adored." In future analyses it would make sense to also combine very
+close synonyms (e.g., afraid and scared are counted separately here but it would
+seem more appropriate to group them together.)
 
 I omitted emotion-realted words that have common meaning unrelated to emotion.
 For example, "sunny" can be used to refer to a person's emotional state, but
 it was omitted from this list because it's at least as likely to used in a way
 that is unrelated to emotion.
 
+As I look over the list below I can see there are mistakes that would be worth
+correcting in a future analysis. Most obvious, there are words that should be
+on the list but aren't (e.g., agonize).
 
 abuse
 abused
@@ -56,7 +61,7 @@ angered
 angry
 anguish
 anguished
-annnoy
+annoy
 annoyed
 annoying
 antagonistic
@@ -217,7 +222,7 @@ devalued
 devastate
 devastated
 devoted
-dicsonnect
+disconnect
 diminish
 diminished
 disappoint
@@ -470,7 +475,6 @@ jittery
 jovial
 judge
 judged
-judgemental
 judging
 judgmental
 jumpy
@@ -503,7 +507,7 @@ marred
 masochist
 masochistic
 meager
-meanspirited
+mean-spirited
 meditative
 medium
 meek
@@ -679,11 +683,11 @@ seething
 self-critical
 self-hate
 self-hating
-selfabsorbed
-selfcastigating
-selfconscious
-selfdenigrating
-selfdeprecating
+self-absorbed
+self-castigating
+self-conscious
+self-denigrating
+self-deprecating
 serene
 serenity
 serious
@@ -695,7 +699,7 @@ shamefaced
 sheepish
 shock
 shocked
-shorttempered
+short-tempered
 shrill
 shun
 shunned
@@ -748,7 +752,7 @@ subdued
 substandard
 suffer
 suffering
-sulf
+sulk
 sulky
 sullen
 superior
@@ -775,7 +779,7 @@ terrifying
 territorial
 terror-stricken
 testy
-thoughfully
+thoughtfully
 thoughtful
 threat
 threatened
@@ -805,7 +809,7 @@ unassuming
 uncaring
 uncertain
 uncertainty
-uncherished
+un-cherished
 uncomfortable
 unconvincing
 undecided
