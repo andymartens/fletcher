@@ -90,21 +90,41 @@ for report in dream_corpus_lower:
 
 #replace all emotion words in waking report corpus with the root word. 
 #i.e, replace scare and scary with scared. 
-waking_corpus_replaced_emotions = []
+#replace all values with their key in emotions_complete_dict. waking reports
+waking_corpus_replaced_emotions_complete = []
 for waking_report in waking_corpus_spell_correct:   
-    for key in emotions_hierarchy_dict.keys():
-        for word in emotions_hierarchy_dict[key]:
-            waking_report = waking_report.replace(word, key)
-    waking_corpus_replaced_emotions.append(waking_report)
-    
-#replace all emotion words in dream report corpus with the root word. 
-#i.e, replace scare and scary with scared. 
-dream_corpus_replaced_emotions = []
+    for key in emotion_words_complete_dict.keys():
+        for word in emotion_words_complete_dict[key]:
+           waking_report = waking_report.replace(word, key)
+    waking_corpus_replaced_emotions_complete.append(waking_report)
+
+#replace all values with their key in emotions_complete_dict. dream reports
+dream_corpus_replaced_emotions_complete = []
 for dream_report in dream_corpus_spell_correct:   
-    for key in emotions_hierarchy_dict.keys():
-        for word in emotions_hierarchy_dict[key]:
+    for key in emotion_words_complete_dict.keys():
+        for word in emotion_words_complete_dict[key]:
             dream_report = dream_report.replace(word, key)
-    dream_corpus_replaced_emotions.append(dream_report)
+    dream_corpus_replaced_emotions_complete.append(dream_report)
+
+
+
+#create dict where emotion_complete category is the key and the values are whether absent or present in each report (waking)
+waking_emotions_complete_dictionary = defaultdict(list)
+for waking_report in waking_corpus_replaced_emotions_complete:   
+    for emotion in emotion_words_complete_dict.keys():
+        if emotion in waking_report:
+            waking_emotions_complete_dictionary[emotion].append(1)
+        else:
+            waking_emotions_complete_dictionary[emotion].append(0)
+            
+#create dict where emotion_complete category is the key and the values are whether absent or present in each report (dream)
+dream_emotions_complete_dictionary = defaultdict(list)
+for dream_report in dream_corpus_replaced_emotions_complete:   
+    for emotion in emotion_words_complete_dict.keys():
+        if emotion in dream_report:
+            dream_emotions_complete_dictionary[emotion].append(1)
+        else:
+            dream_emotions_complete_dictionary[emotion].append(0)
 
 
 
@@ -124,7 +144,7 @@ def sort_emotion_counts_alphabetically(dictionary):
 
 
 
-#to compute ratio of emotions in dream reports over waking reports
+#compute ratio of emotions in dream reports over waking reports
 def get_emotion_ratios(dream_emotion_counts_sorted_alphabetically, waking_emotion_counts_sorted_alphabetically):
     """Takes list of emotions and their counts sorted alphabetically and computes emotion ratios.
     Then sorts these emotion ratios from highest to lowest"""
@@ -138,40 +158,6 @@ def get_emotion_ratios(dream_emotion_counts_sorted_alphabetically, waking_emotio
     sorted_emotion_ratios = sorted(emotions_ratio_list, key=get_key, reverse=True)
     return sorted_emotion_ratios
 
-
-#replace all values with their key in emotions_complete_dict. waking reports
-waking_corpus_replaced_emotions_complete = []
-for waking_report in waking_corpus_spell_correct:   
-    for key in emotion_words_complete_dict.keys():
-        for word in emotion_words_complete_dict[key]:
-           waking_report = waking_report.replace(word, key)
-    waking_corpus_replaced_emotions_complete.append(waking_report)
-
-#replace all values with their key in emotions_complete_dict. dream reports
-dream_corpus_replaced_emotions_complete = []
-for dream_report in dream_corpus_spell_correct:   
-    for key in emotion_words_complete_dict.keys():
-        for word in emotion_words_complete_dict[key]:
-            dream_report = dream_report.replace(word, key)
-    dream_corpus_replaced_emotions_complete.append(dream_report)
-
-#create dict where emotion_complete category is the key and the values are whether absent or present in each report (waking)
-waking_emotions_complete_dictionary = defaultdict(list)
-for waking_report in waking_corpus_replaced_emotions_complete:   
-    for emotion in emotion_words_complete_dict.keys():
-        if emotion in waking_report:
-            waking_emotions_complete_dictionary[emotion].append(1)
-        else:
-            waking_emotions_complete_dictionary[emotion].append(0)
-            
-#create dict where emotion_complete category is the key and the values are whether absent or present in each report (dream)
-dream_emotions_complete_dictionary = defaultdict(list)
-for dream_report in dream_corpus_replaced_emotions_complete:   
-    for emotion in emotion_words_complete_dict.keys():
-        if emotion in dream_report:
-            dream_emotions_complete_dictionary[emotion].append(1)
-        else:
-            dream_emotions_complete_dictionary[emotion].append(0)
 
 
 #compute ratio of emotions in dream reports over dream reports
