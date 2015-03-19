@@ -1,0 +1,4 @@
+"Dream-representativeness" of a word is essentially its frequency in the dream
+descriptions divided by its frequency in the real-life descriptions:
+
+(number_of_dreams_with_emotion_word + 10) / (number_of_real_events_with_emotion_word + 10)
